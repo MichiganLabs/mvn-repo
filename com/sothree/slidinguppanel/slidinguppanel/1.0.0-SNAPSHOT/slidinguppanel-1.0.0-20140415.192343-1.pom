@@ -7,10 +7,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>demo</artifactId>
-    <packaging>apk</packaging>
+    <artifactId>slidinguppanel</artifactId>
+    <packaging>aar</packaging>
 
-    <name>Android Sliding Up Panel (Demo)</name>
+    <name>Android Sliding Up Panel (Library)</name>
 
     <dependencies>
         <!-- Android -->
@@ -21,16 +21,16 @@
         </dependency>
         <dependency>
             <groupId>android.support</groupId>
-            <artifactId>compatibility-v13</artifactId>
-        </dependency>
+						<artifactId>compatibility-v13</artifactId>
+					</dependency>
 
-        <!-- Library -->
-        <dependency>
-            <groupId>com.sothree.slidinguppanel</groupId>
-            <artifactId>slidinguppanel</artifactId>
-            <version>${project.version}</version>
-            <type>aar</type>
-        </dependency>
+
+					<dependency>
+						<groupId>com.nineoldandroids</groupId>
+						<artifactId>library</artifactId>
+						<version>2.4.0</version>
+					</dependency>
+
     </dependencies>
 
     <build>
@@ -50,6 +50,35 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+							</plugin>
         </plugins>
     </build>
 </project>
